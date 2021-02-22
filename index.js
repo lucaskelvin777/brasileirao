@@ -6,7 +6,7 @@ const server = require('http').createServer(app);
 const functions = require("./src/functions.js");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.get('/brasileirao', async function (req, res) {
+app.get('/', async function (req, res) {
     let result = await functions.api('https://api-football-v1.p.rapidapi.com/v2/leagueTable/1396', null);
     result = JSON.parse(result);
     if (result?.api?.standings)
